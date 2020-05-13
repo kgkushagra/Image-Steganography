@@ -66,7 +66,7 @@ def getPixEncode(mess8bit, img, name, i=0, j=0):
             pixel = pixelmap[i, j]
             # print("pixelmap1:",pixelmap[i,j])
             # print("pixel:",pixel)
-            p = str(format(int(pixel[rgb]), '08b'))
+            p = str(format(int(pixel[rgb]), '08b'))    #08 formats the number to eight digits zero-padded on the left and 'b' converts to binary
             # print("p:",p)
             newpix = p[0:6] + k[l:l + 2]
             # print("newpix1:", newpix)
