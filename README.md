@@ -1,6 +1,6 @@
 # minor2
 
-#Image Steganography 
+Image Steganography 
 
 
 Web Application 
