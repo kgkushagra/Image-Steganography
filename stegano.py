@@ -80,7 +80,7 @@ def getPixEncode(mess8bit, img, name, i=0, j=0):
             else:                  #insert to the blue part
                 pixelmap[i, j] = (int(pixel[0]), int(pixel[1]), newpix)
             # print("pixelmap2:",pixelmap[i,j])   
-          #looping conditions for the pixel array 
+          #looping conditions for the pixel array's iterator (rgb)
             if rgb == 2:
                 rgb = 0
             else:
