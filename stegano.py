@@ -1,5 +1,7 @@
 from flask import Flask,flash,render_template,request,redirect,url_for
 from PIL import ImageTk, Image
+from flask_nav import Nav
+from flask_nav.elements import Navbar,Subgroup,View,Link,Text,Separator
 import math
 import os
 import requests
@@ -8,7 +10,15 @@ UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS ={'bmp'}
 #flask link part 
 app = Flask(__name__)
+nav=Nav(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+nav.register_element('my_navbar',Navbar(
+    'thenav',
+    View('Home', 'index'),
+    View('Encrypt','encryptselect'),
+    View('Decrypt','decuploadpage')
+    ));
 
 
 
@@ -154,7 +164,7 @@ def check(s):
 @app.route('/')
 def index():
     return render_template('index.html')
-@app.route('/btnclicke',methods=['POST'])
+@app.route('/btnclicke',methods=['GET','POST'])
 def encryptselect():
     return render_template('home.html')
     
@@ -173,7 +183,9 @@ def decuploadpage():
 def decryptimg():
     im=request.files['file']
     decodemsg=decodeMessage(Image.open(im,mode='r'))
-    return decodemsg
+    text=decodemsg
+    
+    return render_template('text.html',text=text)
 
 if __name__== '__main__':
 

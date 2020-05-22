@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
+    <link  href="{{ url_for('static', filename='css/1.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to steganography site</h1>
-    <div>
+    {{nav.my_navbar.render() }}
+    <!-- <nav>
+        <ul>
+            <li ><a href='index.html'>Home</a></li>
+            <li ><a href='home.html'>Encrypt</a></li>
+        </ul>
+    </nav> -->
+    <h1 >Welcome to steganography site</h1>
+    <div class="index" >
         <form action="/btnclicke" method="POST">
             <input type="submit" value="Encrypt">
         </form>

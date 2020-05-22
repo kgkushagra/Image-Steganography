@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    {{nav.my_navbar.render() }}
+
     <h1>Please upload the file you want to decrypt here:</h1>
     <form  method="POST" action="/decupload" enctype = "multipart/form-data">
         <input type = "file" name = "file" />
