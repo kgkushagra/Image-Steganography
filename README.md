@@ -1,10 +1,10 @@
 # minor2
 
-Image Steganography 
+                                                Image Steganography 
 
 
-Web Application 
-using flask 
+                                                Web Application 
+                                                using flask 
 
 
 install all the dependencies using:
