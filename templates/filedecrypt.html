@@ -1,3 +1,5 @@
+{% extends "bootstrap/base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +8,25 @@
     <title>Document</title>
 </head>
 <body>
+    {% block navbar %}
+    {{ super() }}
     {{nav.my_navbar.render() }}
-
+    {% endblock%}
+    {% block content %}
+    <br/>
+<div class="col-md-8 col-md-offset-2">
     <h1>Please upload the file you want to decrypt here:</h1>
     <form  method="POST" action="/decupload" enctype = "multipart/form-data">
         <input type = "file" name = "file" />
-        <input class="" type="submit" value="submit">
+
+        <br/>
+        <br/>
+        <br/>
+    <div class="col-md-2 col-md-offset-4">
+        <input class="form-control btn-primary" type="submit" value="submit">
+    </div>
     </form>
+</div>
 </body>
 </html>
+{% endblock %}

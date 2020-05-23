@@ -1,3 +1,4 @@
+{% extends "bootstrap/base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +8,38 @@
     <link  href="{{ url_for('static', filename='css/1.css') }}" rel="stylesheet">
 </head>
 <body>
+    {% block navbar %}
+    <!-- {{ super() }} -->
+    <nav class="navbar navbar">
     {{nav.my_navbar.render() }}
-    <!-- <nav>
-        <ul>
-            <li ><a href='index.html'>Home</a></li>
-            <li ><a href='home.html'>Encrypt</a></li>
-        </ul>
-    </nav> -->
-    <h1 >Welcome to steganography site</h1>
-    <div class="index" >
-        <form action="/btnclicke" method="POST">
-            <input type="submit" value="Encrypt">
+    </nav>
+    {% endblock%}
+    {% block content %}
+    <!-- <div class="embed-responsive embed-responsive-16by9"> -->
+    <h1 class="text-center" >Welcome to steganography site</h1>
+    <br/>
+    
+   <div class="container">
+        <form action="/btnclicke" method="POST" class="">
+            <div class="form-group">
+                <div class="col-md-2 col-md-offset-4">
+
+            <input type="submit"  class="form-control btn-danger" value="Encrypt">
+                </div>
+            </div>
         </form>
-        <form action="/btnclickd" method="POST">
-            <input type="submit" value="Decrypt">
+        <form action="/btnclickd" method="POST" class="">
+            <div class="form-group">
+                <div class="col-md-2 col-md-offset">
+            <input type="submit" class="form-control btn-primary" value="Decrypt">
+                </div>
+            </div>
         </form>
     </div>
+ 
+       
+  
+    <!-- </div> -->
 </body>
 </html>
+{% endblock %}

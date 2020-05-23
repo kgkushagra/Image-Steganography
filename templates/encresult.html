@@ -1,3 +1,5 @@
+{% extends "bootstrap/base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +8,18 @@
     <title>Document</title>
 </head>
 <body>
+    {% block navbar %}
+    {{ super() }}
     {{nav.my_navbar.render() }}
+    {% endblock%}
+    {% block content %}
 
-    <h1 style="color:aqua">your encoded image looks like this </h1>
+    <div class="col-md-8 col-md-offset-1">
+    <h1 >your encoded image looks like this </h1>
     <h2>{{te}}</h2>
-    
+    </div>
 </body>
 </html>
+
+
+{% endblock %}

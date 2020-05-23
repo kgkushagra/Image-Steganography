@@ -6,15 +6,17 @@ import math
 import os
 import requests
 from werkzeug.utils import secure_filename
+from flask_bootstrap import Bootstrap
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS ={'bmp'}
 #flask link part 
 app = Flask(__name__)
 nav=Nav(app)
+Bootstrap(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 nav.register_element('my_navbar',Navbar(
-    'thenav',
+    
     View('Home', 'index'),
     View('Encrypt','encryptselect'),
     View('Decrypt','decuploadpage')
